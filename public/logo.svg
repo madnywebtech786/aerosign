@@ -1,0 +1,19 @@
+<svg width="280" height="70" viewBox="0 0 280 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stylized wing/arrow shape -->
+  <path d="M5 55 L20 20 L25 30 L10 60 Z" fill="#2492d1"/>
+  <path d="M15 48 L25 25 L30 32 L18 58 Z" fill="#d91277"/>
+  <path d="M23 42 L30 28 L35 34 L26 56 Z" fill="#f9c411"/>
+
+  <!-- Main A letter body -->
+  <path d="M35 15 L55 60 L48 60 L45 50 L30 50 L27 60 L20 60 L40 15 Z M32 44 L43 44 L37.5 25 Z" fill="#2c3e50"/>
+
+  <!-- AERO text -->
+  <text x="58" y="42" font-family="Arial, sans-serif" font-size="32" font-weight="900" fill="#2c3e50" letter-spacing="-1">
+    ERO
+  </text>
+
+  <!-- SIGN & PRINT text -->
+  <text x="58" y="60" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#5a6c7d" letter-spacing="2">
+    SIGN &amp; PRINT
+  </text>
+</svg>
