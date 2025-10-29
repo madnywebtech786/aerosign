@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Star } from 'lucide-react';
+import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ServiceHero from '@/components/ServiceHero';
@@ -38,6 +39,7 @@ export default async function ServiceCategoryPage({ params }) {
 
   return (
     <div className="min-h-screen bg-white">
+      <TopBar />
       <Navbar />
 
       <main className="pt-24">

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, Target, Award, Lightbulb, Zap, Shield, Heart, Sparkles, CheckCircle } from 'lucide-react';
+import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AboutImage from '@/components/AboutImage';
@@ -55,6 +56,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <TopBar />
       <Navbar />
 
       <main className="pt-24">

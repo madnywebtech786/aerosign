@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, CheckCircle2, Star, Phone, Mail } from 'lucide-react';
+import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ServiceImage from '@/components/ServiceImage';
@@ -74,6 +75,7 @@ export default async function ServiceDetailPage({ params }) {
 
   return (
     <div className="min-h-screen bg-white">
+      <TopBar />
       <Navbar />
 
       <main className="pt-24">
