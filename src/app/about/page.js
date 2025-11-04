@@ -87,14 +87,10 @@ export default function AboutPage() {
 
                 <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                   <p>
-                    Since 2014, we've been at the forefront of the signage and printing industry,
-                    transforming businesses through stunning visual solutions. Our passion for innovation
-                    and commitment to excellence has made us the trusted choice for over 5,000 clients.
+                    Aero Sign & Print Inc. designs, manufactures, and installs industry-leading signage solutions in Calgary, Alberta that capture audience attention and boost customer branding. Our mission is to maximize your return on print and signage investment through outstanding quality and innovative design.
                   </p>
                   <p>
-                    We combine cutting-edge technology with creative expertise to deliver signage that
-                    doesn't just look amazing – it drives real results. From small businesses to major
-                    corporations, we bring the same level of dedication to every single project.
+                    We've invested significantly in state-of-the-art technology and equipment to ensure our clients stay ahead with the full array of industry-leading solutions. Whether it's business signage, digital advertising, or commercial printing, Aero Sign & Print delivers reliable and affordable services to local businesses and franchises across Alberta.
                   </p>
                 </div>
 
@@ -156,7 +152,7 @@ export default function AboutPage() {
                 </span>
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
-                We don't just create signs – we create experiences that drive your business forward
+                As a Calgary-based printing company, we deliver professional and efficient signage solutions with industry best practices that maximize your brand's visibility and ROI
               </p>
             </div>
 
@@ -216,8 +212,8 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-xl text-gray-600 leading-relaxed">
-                From concept to installation, we handle every aspect of your signage needs.
-                Our comprehensive services ensure a seamless experience and outstanding results.
+                From custom design to professional installation, we handle every aspect of your signage and printing needs.
+                Our comprehensive Calgary services ensure seamless delivery and exceptional quality for businesses throughout Alberta.
               </p>
             </div>
 
@@ -307,9 +303,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
                   <p className="text-gray-300 leading-relaxed text-lg flex-grow">
-                    To empower businesses with innovative signage solutions that capture attention,
-                    communicate effectively, and drive measurable results. We're committed to delivering
-                    excellence in every project, big or small.
+                    To maximize our customers' return on print and signage investment by designing, manufacturing, and installing industry-leading signage that captures audience attention and boosts customer branding. We're committed to delivering outstanding quality through industry best practices in every project.
                   </p>
                 </div>
               </div>
@@ -323,9 +317,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
                   <p className="text-gray-300 leading-relaxed text-lg flex-grow">
-                    To be the most trusted name in signage and printing, recognized for our creativity,
-                    quality, and customer-first approach. We aspire to transform how businesses connect
-                    with their audiences through impactful visual communication.
+                    To be Calgary and Alberta's most trusted printing company, recognized for reliable and affordable signage solutions that keep businesses ahead with state-of-the-art technology. We aspire to deliver the full array of industry-leading best solutions and services that help local businesses and franchises thrive.
                   </p>
                 </div>
               </div>
@@ -346,8 +338,8 @@ export default function AboutPage() {
                   Let's Create Something Amazing
                 </h2>
                 <p className="text-xl mb-10 leading-relaxed opacity-90 max-w-2xl mx-auto">
-                  Ready to transform your business with stunning signage? Get in touch today
-                  and let's bring your vision to life!
+                  Ready to maximize your brand's visibility with professional Calgary signage and printing?
+                  Contact Aero Sign & Print today for reliable, affordable solutions that hit the target!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link

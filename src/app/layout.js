@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Aero Sign & Print | Professional Signage & Printing Solutions",
-  description: "Transform your brand with premium signage, large format printing, digital signs, vehicle wraps, and commercial printing services. Quality guaranteed!",
+  title: "Aero Sign & Print Calgary | Professional Signage & Printing Solutions Alberta",
+  description: "Calgary's trusted signage and printing company. We design, manufacture & install industry-leading business signs, digital advertising, vehicle wraps & commercial printing across Alberta. Reliable & affordable solutions for local businesses and franchises.",
 };
 
 export default function RootLayout({ children }) {

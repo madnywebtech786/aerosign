@@ -5,6 +5,8 @@ import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ServiceImage from '@/components/ServiceImage';
+import ServiceTypes from '@/components/ServiceTypes';
+import ServiceProcess from '@/components/ServiceProcess';
 import { servicesData, allServices } from '@/data/services';
 import { notFound } from 'next/navigation';
 
@@ -39,8 +41,8 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${service.name} | ${categoryData.title} | Aero Sign & Print`,
-    description: service.description,
+    title: `${service.name} Calgary | ${categoryData.title} | Aero Sign & Print Alberta`,
+    description: `Professional ${service.name.toLowerCase()} services in Calgary. ${service.description} Custom design, manufacturing & installation across Alberta. Call 403-764-7000 for a free quote.`,
   };
 }
 
@@ -78,7 +80,7 @@ export default async function ServiceDetailPage({ params }) {
       <TopBar />
       <Navbar />
 
-      <main className="pt-24">
+      <main className="pt-32">
         {/* Breadcrumb */}
         <section className="bg-gray-50 py-6">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,12 +151,10 @@ export default async function ServiceDetailPage({ params }) {
                   </h2>
                   <div className="prose prose-lg max-w-none">
                     <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                      {service.description}
+                      {service.fullDescription || service.description}
                     </p>
                     <p className="text-gray-600 leading-relaxed">
-                      Our {service.name.toLowerCase()} service combines cutting-edge technology with expert craftsmanship
-                      to deliver exceptional results that exceed your expectations. We understand that quality signage
-                      is crucial for your business success, and we're committed to providing solutions that make a lasting impact.
+                      {service.seoContent || `Our ${service.name.toLowerCase()} service combines cutting-edge technology with expert craftsmanship to deliver exceptional results that exceed your expectations. We understand that quality signage is crucial for your business success, and we're committed to providing solutions that make a lasting impact.`}
                     </p>
                   </div>
                 </div>
@@ -216,6 +216,16 @@ export default async function ServiceDetailPage({ params }) {
             </div>
           </div>
         </section>
+
+        {/* Service Types Section */}
+        {service.types && service.types.length > 0 && (
+          <ServiceTypes types={service.types} gradient={categoryData.gradient} />
+        )}
+
+        {/* Service Process Section */}
+        {service.processes && service.processes.length > 0 && (
+          <ServiceProcess processes={service.processes} gradient={categoryData.gradient} />
+        )}
 
         {/* Portfolio/Gallery Section */}
         <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
