@@ -1,7 +1,8 @@
 'use client';
 
-export default function ServiceImage({ slug, name, gradient }) {
-  const hasImage = ['3d-channel-lettering', 'light-box-cabinet-sign', 'pylon-sign'].includes(slug);
+export default function ServiceImage({ slug, name, gradient, image, sideImage }) {
+  const hasImage = sideImage || image || ['3d-channel-lettering', 'light-box-cabinet-sign', 'pylon-sign'].includes(slug);
+  const imageSrc = sideImage || image || `/images/services/${slug}.png`;
 
   return (
     <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
@@ -12,7 +13,7 @@ export default function ServiceImage({ slug, name, gradient }) {
           {hasImage ? (
             <>
               <img
-                src={`/images/services/${slug}.png`}
+                src={imageSrc}
                 alt={name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 onError={(e) => {

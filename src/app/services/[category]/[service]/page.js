@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, ArrowRight, CheckCircle2, Star, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, Star, Phone, Mail, Heart, BookOpen, Plane, Bus, Info, Library, CreditCard, Building2 } from 'lucide-react';
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -65,16 +65,6 @@ export default async function ServiceDetailPage({ params }) {
     .filter(s => s.slug !== service.slug)
     .slice(0, 3);
 
-  // Portfolio images (placeholders for now)
-  const portfolioImages = [
-    { id: 1, alt: `${service.name} Example 1` },
-    { id: 2, alt: `${service.name} Example 2` },
-    { id: 3, alt: `${service.name} Example 3` },
-    { id: 4, alt: `${service.name} Example 4` },
-    { id: 5, alt: `${service.name} Example 5` },
-    { id: 6, alt: `${service.name} Example 6` },
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       <TopBar />
@@ -99,10 +89,29 @@ export default async function ServiceDetailPage({ params }) {
         </section>
 
         {/* Hero Section - Simple */}
-        <section className={`relative py-16 bg-gradient-to-br ${categoryData.gradient} text-white overflow-hidden`}>
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_35px,rgba(255,255,255,0.5)_35px,rgba(255,255,255,0.5)_70px)]"></div>
-          </div>
+        <section className={`relative py-28 text-white overflow-hidden`}>
+          {/* Background Image with Overlay */}
+          {service.image ? (
+            <>
+              <div className="absolute inset-0">
+                <Image
+                  src={service.image}
+                  alt={service.name}
+                  fill
+                  className="object-[100%_100%]"
+                  priority
+                />
+              </div>
+              <div className={`absolute inset-0 bg-gradient-to-br ${categoryData.gradient} opacity-80`}></div>
+            </>
+          ) : (
+            <>
+              <div className={`absolute inset-0 bg-gradient-to-br ${categoryData.gradient}`}></div>
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_35px,rgba(255,255,255,0.5)_35px,rgba(255,255,255,0.5)_70px)]"></div>
+              </div>
+            </>
+          )}
 
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
             <Link
@@ -139,6 +148,8 @@ export default async function ServiceDetailPage({ params }) {
                   slug={service.slug}
                   name={service.name}
                   gradient={categoryData.gradient}
+                  image={service.image}
+                  sideImage={service.sideImage}
                 />
               </div>
 
@@ -227,40 +238,260 @@ export default async function ServiceDetailPage({ params }) {
           <ServiceProcess processes={service.processes} gradient={categoryData.gradient} />
         )}
 
-        {/* Portfolio/Gallery Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                Our
-                <span className={`ml-3 bg-gradient-to-r ${categoryData.gradient} bg-clip-text text-transparent`}>
-                  Work
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600">
-                Check out some examples of our {service.name.toLowerCase()} projects
-              </p>
+        {/* Applications Section - Interactive Kiosks */}
+        {service.applications && service.applications.length > 0 && (
+          <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50">
+            {/* Animated background patterns */}
+            <div className="absolute inset-0">
+              {/* Subtle grid pattern */}
+              <div className="absolute inset-0 opacity-[0.03]" style={{
+                backgroundImage: 'linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)',
+                backgroundSize: '60px 60px'
+              }}></div>
+
+              {/* Floating gradient circles */}
+              <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-primary-pink/20 to-primary-blue/20 rounded-full blur-3xl animate-float"></div>
+              <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-primary-yellow/20 to-primary-pink/20 rounded-full blur-3xl animate-float-delayed"></div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-              {portfolioImages.map((img) => (
-                <div
-                  key={img.id}
-                  className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${categoryData.gradient} flex items-center justify-center`}>
-                    <div className="text-center text-white">
-                      <span className="text-4xl mb-2 block">🖼️</span>
-                      <p className="text-sm font-semibold">{img.alt}</p>
-                      <p className="text-xs opacity-75 mt-1">Portfolio #{img.id}</p>
+            <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-7xl mx-auto">
+                {/* Section Header */}
+                <div className="text-center mb-16">
+                  <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white shadow-lg border border-gray-200 mb-6 hover:shadow-xl transition-shadow duration-300">
+                    <div className={`w-2.5 h-2.5 rounded-full bg-gradient-to-r ${categoryData.gradient} animate-pulse`}></div>
+                    <span className="text-sm font-semibold text-gray-700">Perfect For Multiple Industries</span>
+                  </div>
+
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    Great For The Following
+                    <span className={`block mt-3 bg-gradient-to-r ${categoryData.gradient} bg-clip-text text-transparent`}>
+                      Applications
+                    </span>
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Our Interactive Kiosks serve diverse industries with innovative, cutting-edge solutions tailored to your specific needs
+                  </p>
+                </div>
+
+                {/* Applications Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+                  {service.applications.map((app, index) => (
+                    <div
+                      key={index}
+                      className="group relative"
+                    >
+                      {/* Card */}
+                      <div className="relative h-full">
+                        {/* Gradient background layer */}
+                        <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${categoryData.gradient} opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm`}></div>
+
+                        {/* Main card content */}
+                        <div className="relative bg-white rounded-2xl p-6 lg:p-8 shadow-md group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1 cursor-pointer border border-gray-100 group-hover:border-transparent">
+                          {/* Top decorative corner */}
+                          <div className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-br ${categoryData.gradient} opacity-5 rounded-bl-full transition-opacity duration-300 group-hover:opacity-10`}></div>
+
+                          {/* Content container */}
+                          <div className="relative flex flex-col items-center text-center space-y-4">
+                            {/* Icon container */}
+                            <div className="relative mb-2">
+                              {/* Animated circle ring */}
+                              <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${categoryData.gradient} opacity-10 group-hover:scale-110 transition-transform duration-500`}></div>
+
+                              {/* Icon circle */}
+                              <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center group-hover:shadow-lg transition-all duration-500">
+                                {/* Icon */}
+                                <div className={`transform group-hover:scale-110 transition-transform duration-500 text-gray-700`}>
+                                  {app.icon === 'Heart' && <Heart className="w-8 h-8" strokeWidth={1.5} />}
+                                  {app.icon === 'BookOpen' && <BookOpen className="w-8 h-8" strokeWidth={1.5} />}
+                                  {app.icon === 'Plane' && <Plane className="w-8 h-8" strokeWidth={1.5} />}
+                                  {app.icon === 'Bus' && <Bus className="w-8 h-8" strokeWidth={1.5} />}
+                                  {app.icon === 'Info' && <Info className="w-8 h-8" strokeWidth={1.5} />}
+                                  {app.icon === 'Library' && <Library className="w-8 h-8" strokeWidth={1.5} />}
+                                  {app.icon === 'CreditCard' && <CreditCard className="w-8 h-8" strokeWidth={1.5} />}
+                                  {app.icon === 'Building2' && <Building2 className="w-8 h-8" strokeWidth={1.5} />}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Application name */}
+                            <h3 className="text-base lg:text-lg font-bold text-gray-900 px-2">
+                              {app.name}
+                            </h3>
+
+                            {/* Animated underline */}
+                            <div className={`h-0.5 w-0 group-hover:w-12 bg-gradient-to-r ${categoryData.gradient} transition-all duration-500`}></div>
+                          </div>
+
+                          {/* Bottom left accent */}
+                          <div className={`absolute bottom-0 left-0 w-12 h-12 bg-gradient-to-tr ${categoryData.gradient} opacity-0 group-hover:opacity-5 rounded-tr-full transition-opacity duration-300`}></div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom CTA */}
+                <div className="text-center mt-20">
+                  <div className="inline-flex flex-col items-center gap-6 p-8 rounded-3xl bg-white shadow-xl border border-gray-200">
+                    <p className="text-lg text-gray-700 font-medium">
+                      Need a custom kiosk solution for your industry?
+                    </p>
+                    <Link
+                      href="#contact-cta"
+                      className={`inline-flex items-center px-10 py-4 bg-gradient-to-r ${categoryData.gradient} text-white font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group`}
+                    >
+                      Get Started Today
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </Link>
+                    <p className="text-sm text-gray-500">Free consultation • Quick response • Expert guidance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Installation Section - 3D Sign Installation */}
+        {service.installationSection && (
+          <section className="relative py-32 overflow-hidden">
+            {/* Animated background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+              {/* Animated grid pattern */}
+              <div
+                className="absolute inset-0 opacity-[0.15] animate-[gridScroll_20s_linear_infinite]"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                                  linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+                  backgroundSize: '50px 50px'
+                }}
+              ></div>
+
+              {/* Glowing orbs */}
+              <div className={`absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br ${categoryData.gradient} rounded-full opacity-20 blur-3xl animate-pulse`}></div>
+              <div className={`absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br ${categoryData.gradient} rounded-full opacity-20 blur-3xl animate-pulse`} style={{ animationDelay: '1s' }}></div>
+            </div>
+
+            <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                  {/* Left - Content */}
+                  <div className="space-y-8 lg:pr-8">
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${categoryData.gradient} animate-pulse`}></div>
+                      <span className="text-sm font-semibold text-white/90">Professional Installation</span>
+                    </div>
+
+                    <h2 className="text-5xl sm:text-6xl font-bold text-white leading-tight">
+                      <span className={`bg-gradient-to-r ${categoryData.gradient} bg-clip-text text-transparent`}>
+                        {service.installationSection.heading}
+                      </span>
+                    </h2>
+
+                    <div className="space-y-6">
+                      {service.installationSection.content.split('\n\n').map((paragraph, index) => (
+                        <div key={index} className="group">
+                          <div className={`h-px w-12 bg-gradient-to-r ${categoryData.gradient} mb-4 group-hover:w-24 transition-all duration-300`}></div>
+                          <p className="text-lg text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
+                            {paragraph}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Stats or features */}
+                    <div className="grid grid-cols-3 gap-6 pt-8">
+                      {[
+                        { label: 'Expert Team', value: '10+' },
+                        { label: 'Years Experience', value: '15+' },
+                        { label: 'Projects Done', value: '500+' }
+                      ].map((stat, index) => (
+                        <div key={index} className="group cursor-default">
+                          <div className={`text-3xl font-bold bg-gradient-to-r ${categoryData.gradient} bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300`}>
+                            {stat.value}
+                          </div>
+                          <div className="text-sm text-gray-400 mt-1 group-hover:text-gray-300 transition-colors">
+                            {stat.label}
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  {/* Right - Video with futuristic frame */}
+                  <div className="relative group">
+                    {/* Corner decorations */}
+                    <div className="absolute -top-4 -left-4 w-16 h-16 border-t-2 border-l-2 border-white/30 rounded-tl-3xl group-hover:w-20 group-hover:h-20 transition-all duration-500"></div>
+                    <div className="absolute -top-4 -right-4 w-16 h-16 border-t-2 border-r-2 border-white/30 rounded-tr-3xl group-hover:w-20 group-hover:h-20 transition-all duration-500"></div>
+                    <div className="absolute -bottom-4 -left-4 w-16 h-16 border-b-2 border-l-2 border-white/30 rounded-bl-3xl group-hover:w-20 group-hover:h-20 transition-all duration-500"></div>
+                    <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-2 border-r-2 border-white/30 rounded-br-3xl group-hover:w-20 group-hover:h-20 transition-all duration-500"></div>
+
+                    {/* Glowing border effect */}
+                    <div className={`absolute -inset-[2px] bg-gradient-to-r ${categoryData.gradient} rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500`}></div>
+
+                    {/* Video container */}
+                    <div className="relative aspect-video rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
+                      <video
+                        className="w-full h-full object-cover"
+                        controls
+                        poster="/images/3d-sign-installation-poster.jpg"
+                      >
+                        <source src={service.installationSection.videoUrl} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+
+                      {/* Scan line effect overlay */}
+                      <div className="absolute inset-0 pointer-events-none opacity-10">
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white to-transparent h-32 animate-[scan_3s_ease-in-out_infinite]"></div>
+                      </div>
+                    </div>
+
+                    {/* Floating elements */}
+                    <div className={`absolute -z-10 top-1/2 -right-8 w-32 h-32 bg-gradient-to-br ${categoryData.gradient} rounded-full opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500`}></div>
+                    <div className={`absolute -z-10 bottom-1/4 -left-8 w-24 h-24 bg-gradient-to-br ${categoryData.gradient} rounded-full opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500`}></div>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
+
+        {/* Portfolio/Gallery Section */}
+        {service.gallery && service.gallery.length > 0 && (
+          <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+                  Our
+                  <span className={`ml-3 bg-gradient-to-r ${categoryData.gradient} bg-clip-text text-transparent`}>
+                    Work
+                  </span>
+                </h2>
+                <p className="text-xl text-gray-600">
+                  Check out some examples of our {service.name.toLowerCase()} projects
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                {service.gallery.map((imagePath, index) => (
+                  <div
+                    key={index}
+                    className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                  >
+                    <Image
+                      src={imagePath}
+                      alt={`${service.name} Project ${index + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Related Services */}
         {relatedServices.length > 0 && (
