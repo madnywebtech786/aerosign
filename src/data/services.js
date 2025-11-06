@@ -10,10 +10,10 @@ export const servicesData = {
       {
         name: "3D Channel Lettering",
         slug: "3d-channel-lettering",
+        sideImage:
+          "/images/services/Aerosign/Business signs/3D Channel Lettering/3d Channel lettering-service.png",
         description:
           "Eye-catching three-dimensional letters that add depth and sophistication to your business facade. Perfect for creating a lasting impression.",
-        image:
-          "/images/services/Aerosign/Business signs/3D Channel Lettering/Webbanner.jpg",
         fullDescription:
           "Looking for a way to make your business stand out in Calgary? Aero Sign & Print's 3D Business Signs Calgary offer striking dimensional lettering that adds a dynamic factor to your brand. These impressive 3D business signs can be created from a range of materials and styles for bold advertising that packs a punch. Three-dimensional letters offer what many Calgary business owners are looking for: visibility, durability, and high-impact appearance. We help you customize the shape, size, font, and coloring of your 3D sign to perfectly match your brand identity.",
         seoContent:
@@ -140,8 +140,6 @@ export const servicesData = {
         slug: "light-box-cabinet-sign",
         description:
           "Illuminated cabinet signs that ensure your business stands out day and night. Ideal for storefronts and commercial properties.",
-        image:
-          "/images/services/Aerosign/Business signs/Light Box Or Cabinet Sign/Lightbox-banner.jpg",
         sideImage:
           "/images/services/Aerosign/Business signs/Light Box Or Cabinet Sign/LED-Retrolight.jpg",
         fullDescription:
@@ -209,10 +207,8 @@ export const servicesData = {
         slug: "pylon-sign",
         description:
           "Tall, freestanding structures perfect for highway visibility and shopping centers. Make your business visible from far distances.",
-        image:
-          "/images/services/Aerosign/Business signs/Pylon Sign/Banner-pylon.jpg",
         sideImage:
-          "/images/services/Aerosign/Business signs/Pylon Sign/V-Pylon-Sign (1).jpg",
+          "/images/services/Aerosign/Business signs/Pylon Sign/Pylon sign service.png",
         fullDescription:
           "If you are looking for a high impact yet cost-effective way to market your business, Pylon Business Signs may be the right way to go. A pylon business sign can provide all the bang of a billboard plus lets potential customers know where your business is located. Most often it attracts and directs commuter traffic to your location when the building is hidden from direct vision from the road.",
         seoContent:
@@ -354,10 +350,10 @@ export const servicesData = {
       {
         name: "Interior Signage",
         slug: "interior-signage",
+        sideImage:
+          "/images/services/Aerosign/Business signs/Interior Signage/Interior signs.png",
         description:
           "Complete interior wayfinding and branding solutions. Guide customers and reinforce your brand identity indoors.",
-        image:
-          "/images/services/Aerosign/Business signs/Interior Signage/Banner-interior-Signage.jpg",
         fullDescription:
           "Getting customers to enter your business establishment is one thing; keeping them there is another. Nothing says more about your brand value and appeal than the quality of your Indoor Signs Printing. Interior Signs are what further enhance your first impression while ensuring customers know they are in a professional establishment. Aero Sign and Print offers a variety of materials and styles to choose from when designing your Indoor Signs Printing. We can also assist you in installation making sure that the signs fit in with the overall image of your business. Indoor Signs Printing are also vital for directing customers to specific areas in your establishment. Interior Signs can help in keeping an ordered flow of customers and visitors. Beautifully crafted and installed Interior signs give the look and functionality which you deserve for your business' status. Choosing the right Indoor Signs Printing definitely reinforce your image and improve your give your brand distinction in the eyes of your customers.",
         seoContent:
@@ -524,8 +520,6 @@ export const servicesData = {
         slug: "vinyl-cut-lettering",
         description:
           "Precision-cut vinyl graphics and lettering for vehicles, windows, walls, and more.",
-        image:
-          "/images/services/Aerosign/Large Format Printing/Vinyl Cut Lettering/Vinylcut-lettering-banner.jpg",
         sideImage:
           "/images/services/Aerosign/Large Format Printing/Vinyl Cut Lettering/vinyl-cut.jpg",
         fullDescription:
@@ -630,8 +624,6 @@ export const servicesData = {
       {
         name: "Window & Door Decal",
         slug: "window-door-decal",
-        image:
-          "/images/services/Aerosign/Large Format Printing/Window & Door Decal/Main-bannerWD.jpg",
         sideImage:
           "/images/services/Aerosign/Large Format Printing/Window & Door Decal/Vinyl-only.jpg",
         gallery: [
@@ -700,8 +692,6 @@ export const servicesData = {
       {
         name: "Wall & Door Decals",
         slug: "wall-door-decals",
-        image:
-          "/images/services/Aerosign/Large Format Printing/Wall & Door Decals/Wall-door-decal.jpg",
         sideImage:
           "/images/services/Aerosign/Large Format Printing/Wall & Door Decals/gallery/Wall-and-Door-Portfolio-1.jpg",
         gallery: [
@@ -817,8 +807,6 @@ export const servicesData = {
         slug: "media-truck",
         description:
           "Mobile LED advertising trucks that take your message directly to your target audience anywhere in the city.",
-        image:
-          "/images/services/Aerosign/Digital Signs/Media Truck/Banner-Media_truck.jpg",
         sideImage:
           "/images/services/Aerosign/Digital Signs/Media Truck/Banner-Media_truck.jpg",
         gallery: [
@@ -849,14 +837,8 @@ export const servicesData = {
 
         description:
           "Self-service kiosks with touchscreen technology for wayfinding, information, and customer engagement.",
-        image:
-          "/images/services/Aerosign/Digital Signs/Interactive Kiosks/Kiosk-banner.jpg",
         sideImage:
           "/images/services/Aerosign/Digital Signs/Interactive Kiosks/business-example-Digital-Kiosk-page.png",
-        gallery: [
-          "/images/services/Aerosign/Digital Signs/Interactive Kiosks/business-example-Digital-Kiosk-page.png",
-          "/images/services/Aerosign/Digital Signs/Interactive Kiosks/Kiosk-banner.jpg",
-        ],
         fullDescription:
           "Aero Sign & Print offer design and manufacture of interactive and non-interactive Digital Signage Kiosks. With our sleek and eye-catching designs your Digital kiosk marketing will reach new heights. You can attract and increase your brand awareness by marketing via a LCD Interactive Advertising Kiosk. High traffic spots such as airports, hotel lobbies, and shops are the best place to mount these LCD Interactive Advertising Kiosk. The aesthetic design of these digital kiosks makes it most useful for increasing your brand visibility. We have a great team of highly skilled labor, who make us stand out from the rest of our competitors for our graphic and interface design. So, if you need a digital kiosk for marketing your business, please feel free to give us a call or drop by for more details.",
         seoContent:
@@ -881,28 +863,32 @@ export const servicesData = {
             slug: "product-information",
             description:
               "Product Information Kiosks in Calgary provide customers with instant access to detailed product specifications, pricing, and availability. These interactive digital kiosks enhance the shopping experience by allowing customers to browse your entire catalog and make informed purchasing decisions. Perfect for retail stores, showrooms, and exhibitions, our product information kiosks reduce staff workload while improving customer satisfaction with intuitive interfaces and high-resolution touchscreen displays.",
-            image: "/images/services/types/product-information-kiosk.jpg",
+            image:
+              "/images/services/Aerosign/Digital Signs/Interactive Kiosks/Product_Info.png",
           },
           {
             name: "Banking Kiosk",
             slug: "banking-kiosk",
             description:
               "Banking Kiosks in Calgary offer secure and efficient self-service banking solutions for financial institutions. These advanced kiosks enable customers to perform various banking transactions including account inquiries, deposits, withdrawals, and bill payments without waiting in line. Manufactured with state-of-the-art security features and designed to meet strict financial industry standards. With user-friendly interfaces and multi-language support, our banking kiosks improve customer convenience while reducing operational costs for banks and credit unions in Calgary.",
-            image: "/images/services/types/banking-kiosk.jpg",
+            image:
+              "/images/services/Aerosign/Digital Signs/Interactive Kiosks/Banking.png",
           },
           {
             name: "Internet Kiosk",
             slug: "internet-kiosk",
             description:
               "Internet Kiosks in Calgary provide public internet access in high-traffic locations such as libraries, hotels, airports, shopping malls, and community centers. These kiosks offer secure web browsing, email access, and online services with robust security features including browsing restrictions and automatic session timeouts. Our internet kiosks feature ergonomic designs, privacy screens, and durable construction to withstand heavy public use. Perfect for businesses and organizations in Calgary looking to provide value-added services.",
-            image: "/images/services/types/internet-kiosk.jpg",
+            image:
+              "/images/services/Aerosign/Digital Signs/Interactive Kiosks/Internet.png",
           },
           {
             name: "Self Service / Vending",
             slug: "self-service-vending",
             description:
               "Self Service and Vending Kiosks in Calgary revolutionize the way businesses serve their customers by automating sales and service processes. These innovative kiosks handle everything from food and beverage vending to ticket sales and product dispensing. Manufactured with integrated payment systems accepting cash, cards, and mobile payments. Perfect for Calgary businesses looking to expand service hours, reduce labor costs, and increase revenue through 24/7 automated sales with customizable configurations and remote monitoring capabilities.",
-            image: "/images/services/types/self-service-vending-kiosk.jpg",
+            image:
+              "/images/services/Aerosign/Digital Signs/Interactive Kiosks/Self_Service.png",
           },
         ],
         applications: [
@@ -929,7 +915,8 @@ export const servicesData = {
       {
         name: "Business Stationary",
         slug: "business-stationary",
-        image:"/images/services/Aerosign/Commercial Printing/Business Stationary/Banner-1.jpg",
+        sideImage:
+          "/images/services/Aerosign/Commercial Printing/Business Stationary/Business stationary.png",
         description:
           "Complete business stationary packages including letterheads, envelopes, and compliment slips.",
         fullDescription:
@@ -1284,7 +1271,6 @@ export const servicesData = {
       {
         name: "Car, Truck & Van Wraps",
         slug: "car-truck-van-wraps",
-        image: "/images/services/Aerosign/Vehicle wraps/Vehicle-Wrap-Banner.jpg",
         sideImage:
           "/images/services/Aerosign/Vehicle wraps/Vehicle-Wrap-Full-wrap.jpg",
         gallery: [

@@ -56,7 +56,7 @@ export default function ServiceTypes({ types, gradient }) {
                   src={type.image}
                   alt={type.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="transition-transform duration-700 group-hover:scale-110"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                   }}

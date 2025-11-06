@@ -1,12 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { Building2, Printer, Monitor, FileText, Car, Globe, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
-      icon: Building2,
+      image: '/images/services/service-categories/Business Signs.png',
       title: 'Business Signs',
       description: 'Professional signage solutions including 3D lettering, light boxes, pylon signs, and more to elevate your business presence.',
       features: [
@@ -17,10 +18,9 @@ const Services = () => {
       ],
       gradient: 'from-primary-pink to-primary-blue',
       href: '/services/business-signs',
-      bgPattern: 'pattern-1'
     },
     {
-      icon: Printer,
+      image: '/images/services/service-categories/Large Format Printing.png',
       title: 'Large Format Printing',
       description: 'High-quality large format printing solutions for outdoor and indoor advertising, from eye-catching lawn signs to stunning wall decals.',
       features: [
@@ -31,10 +31,9 @@ const Services = () => {
       ],
       gradient: 'from-primary-blue to-primary-yellow',
       href: '/services/large-format-printing',
-      bgPattern: 'pattern-2'
     },
     {
-      icon: Monitor,
+      image: '/images/services/service-categories/Digital Signs.png',
       title: 'Digital Signs',
       description: 'Cutting-edge digital signage with dynamic content capabilities including LED displays and interactive kiosks.',
       features: [
@@ -45,10 +44,9 @@ const Services = () => {
       ],
       gradient: 'from-primary-yellow to-primary-pink',
       href: '/services/digital-signs',
-      bgPattern: 'pattern-3'
     },
     {
-      icon: FileText,
+      image: '/images/services/service-categories/Commercial Printing.png',
       title: 'Commercial Printing',
       description: 'Complete commercial printing services for all your business communication and marketing materials.',
       features: [
@@ -59,10 +57,9 @@ const Services = () => {
       ],
       gradient: 'from-primary-pink to-primary-yellow',
       href: '/services/commercial-printing',
-      bgPattern: 'pattern-1'
     },
     {
-      icon: Car,
+      image: '/images/services/service-categories/Vehicle Wraps.png',
       title: 'Vehicle Wraps',
       description: 'Transform your vehicles into mobile billboards with stunning custom wraps for cars, trucks, and vans.',
       features: [
@@ -73,10 +70,9 @@ const Services = () => {
       ],
       gradient: 'from-primary-blue to-primary-pink',
       href: '/services/vehicle-wraps',
-      bgPattern: 'pattern-2'
     },
     {
-      icon: Globe,
+      image: '/images/services/service-categories/website design.png',
       title: 'Website Design',
       description: 'Modern, responsive website design services to establish and grow your digital presence effectively.',
       features: [
@@ -87,7 +83,6 @@ const Services = () => {
       ],
       gradient: 'from-primary-yellow to-primary-blue',
       href: '/services/website-design',
-      bgPattern: 'pattern-3'
     }
   ];
 
@@ -126,24 +121,20 @@ const Services = () => {
               key={index}
               className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
-              {/* Gradient Header */}
-              <div className={`relative h-48 bg-gradient-to-br ${service.gradient} p-8 overflow-hidden`}>
-                {/* Pattern Overlay */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute inset-0" style={{
-                    backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.5) 10px, rgba(255,255,255,.5) 20px)`
-                  }}></div>
-                </div>
-
-                {/* Icon */}
-                <div className="relative z-10">
-                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    <service.icon className="w-10 h-10 text-white" />
-                  </div>
-                </div>
+              {/* Background Image Header */}
+              <div className="relative h-80 overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-[100%_100%] group-hover:scale-110 transition-transform duration-500"
+                  priority={index < 3}
+                />
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-30 group-hover:opacity-20 transition-opacity duration-300`}></div>
 
                 {/* Decorative Circle */}
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                <div className={`absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br ${service.gradient} opacity-20 rounded-full group-hover:scale-150 transition-transform duration-500`}></div>
               </div>
 
               {/* Content */}
