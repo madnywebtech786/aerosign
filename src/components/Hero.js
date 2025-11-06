@@ -190,7 +190,7 @@ const Hero = () => {
                     </div>
 
                     {/* Floating Feature Cards */}
-                    <div className="absolute -top-6 -right-6 bg-white p-5 rounded-2xl shadow-xl animate-float border border-gray-100">
+                    <div className="absolute -top-6 right-4 bg-white p-5 rounded-2xl shadow-xl animate-float border border-gray-100">
                       <div className="flex items-center space-x-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-primary-pink to-primary-blue rounded-xl flex items-center justify-center">
                           <Sparkles className="w-6 h-6 text-white" />
