@@ -1,3 +1,5 @@
+'use client'
+import { use } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, CheckCircle2, Star, Phone, Mail, Heart, BookOpen, Plane, Bus, Info, Library, CreditCard, Building2 } from 'lucide-react';
@@ -7,47 +9,12 @@ import Footer from '@/components/Footer';
 import ServiceImage from '@/components/ServiceImage';
 import ServiceTypes from '@/components/ServiceTypes';
 import ServiceProcess from '@/components/ServiceProcess';
+import GallerySlider from '@/components/GallerySlider';
 import { servicesData, allServices } from '@/data/services';
 import { notFound } from 'next/navigation';
 
-export async function generateStaticParams() {
-  const params = [];
-
-  Object.keys(servicesData).forEach((categoryKey) => {
-    const category = servicesData[categoryKey];
-    category.services.forEach((service) => {
-      params.push({
-        category: categoryKey,
-        service: service.slug,
-      });
-    });
-  });
-
-  return params;
-}
-
-export async function generateMetadata({ params }) {
-  const resolvedParams = await params;
-  const categoryData = servicesData[resolvedParams.category];
-
-  if (!categoryData) {
-    return { title: 'Service Not Found' };
-  }
-
-  const service = categoryData.services.find(s => s.slug === resolvedParams.service);
-
-  if (!service) {
-    return { title: 'Service Not Found' };
-  }
-
-  return {
-    title: `${service.name} Calgary | ${categoryData.title} | Aero Sign & Print Alberta`,
-    description: `Professional ${service.name.toLowerCase()} services in Calgary. ${service.description} Custom design, manufacturing & installation across Alberta. Call 403-764-7000 for a free quote.`,
-  };
-}
-
-export default async function ServiceDetailPage({ params }) {
-  const resolvedParams = await params;
+export default function ServiceDetailPage({ params }) {
+  const resolvedParams = use(params);
   const categoryData = servicesData[resolvedParams.category];
 
   if (!categoryData) {
@@ -458,40 +425,11 @@ export default async function ServiceDetailPage({ params }) {
         )}
 
         {/* Portfolio/Gallery Section */}
-        {service.gallery && service.gallery.length > 0 && (
-          <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                  Our
-                  <span className={`ml-3 bg-gradient-to-r ${categoryData.gradient} bg-clip-text text-transparent`}>
-                    Work
-                  </span>
-                </h2>
-                <p className="text-xl text-gray-600">
-                  Check out some examples of our {service.name.toLowerCase()} projects
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-                {service.gallery.map((imagePath, index) => (
-                  <div
-                    key={index}
-                    className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-                  >
-                    <Image
-                      src={imagePath}
-                      alt={`${service.name} Project ${index + 1}`}
-                      fill
-                      className=" transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+        <GallerySlider
+          gallery={service.gallery}
+          serviceName={service.name}
+          gradient={categoryData.gradient}
+        />
 
         {/* Related Services */}
         {relatedServices.length > 0 && (
