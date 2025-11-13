@@ -33,7 +33,7 @@ const TopBar = () => {
           {/* Right - Address with Canadian Flag */}
           <div className="hidden sm:flex items-center space-x-2 text-xs sm:text-sm">
             <MapPin className="w-4 h-4 flex-shrink-0" />
-            <span className="hidden md:inline">4852 50th Ave NE, Calgary, AB T3J 4LB</span>
+            <span className="hidden md:inline">4852 50th Ave NE, Calgary, AB T3J 4L8</span>
             <span className="md:hidden">Calgary, AB</span>
             <Image
               src="/images/flag.png"

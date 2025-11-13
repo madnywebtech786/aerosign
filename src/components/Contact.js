@@ -49,7 +49,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: ['4852 50th Ave NE', 'Calgary, AB T3J 4LB'],
+      details: ['4852 50th Ave NE', 'Calgary, AB T3J 4L8'],
       href: 'https://maps.google.com/?q=4852+50th+Ave+NE+Calgary+AB+T3J+4LB',
       gradient: 'from-primary-yellow to-yellow-600'
     },
@@ -248,7 +248,7 @@ const Contact = () => {
                   <MapPin className="w-16 h-16 mx-auto mb-4" />
                   <h4 className="text-2xl font-bold mb-2">Visit Our Location</h4>
                   <p className="text-lg">4852 50th Ave NE</p>
-                  <p className="text-lg">Calgary, AB T3J 4LB</p>
+                  <p className="text-lg">Calgary, AB T3J 4L8</p>
                   <a
                     href="https://maps.google.com/?q=4852+50th+Ave+NE+Calgary+AB+T3J+4LB"
                     target="_blank"
