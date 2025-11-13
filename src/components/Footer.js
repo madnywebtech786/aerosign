@@ -26,7 +26,7 @@ const Footer = () => {
   const contactInfo = [
     { icon: Phone, text: '403-764-7000', href: 'tel:+14037647000' },
     { icon: Mail, text: 'sales@aerosign.ca', href: 'mailto:sales@aerosign.ca' },
-    { icon: MapPin, text: '4852 50th Ave NE, Calgary, AB T3J 4LB', href: 'https://maps.google.com/?q=4852+50th+Ave+NE+Calgary+AB+T3J+4LB' },
+    { icon: MapPin, text: '4852 50th Ave NE, Calgary, AB T3J 4L8', href: 'https://maps.google.com/?q=4852+50th+Ave+NE+Calgary+AB+T3J+4LB' },
   ];
 
   const socialLinks = [
