@@ -1414,6 +1414,7 @@ export const servicesData = {
       {
         name: "Website Design & Development",
         slug: "website-design-development",
+        sideImage:"/images/services/service-categories/website design.png",
         description:
           "Custom website design and development services that create engaging online experiences for your business.",
         fullDescription:
