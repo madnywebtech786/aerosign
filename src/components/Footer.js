@@ -49,13 +49,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div className="space-y-6">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block w-full">
               <Image
-                src="/logo.gif"
+                src="/images/aero-logo.png"
                 alt="Aero Sign & Print"
                 width={180}
-                height={60}
-                className="h-14 w-auto brightness-0 invert"
+                height={96}
+                className="h-24 w-full"
               />
             </Link>
             <p className="text-gray-400 leading-relaxed">
